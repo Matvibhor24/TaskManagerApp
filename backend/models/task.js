@@ -14,13 +14,13 @@ const taskSchema = mongoose.Schema({
                 }
                 return true
             },
-            message: ({value}) => {
-                if(value.length < 6)
-                return `Title must be atleast 6, got only ${value.length} char`;
-                else if (value.length >15){
-                    return `Title must be max 40, got ${value.length} char`;
-                }
-            },
+            // message: ({value}) => {
+            //     if(value.length < 6)
+            //     return `Title must be atleast 6, got only ${value.length} char`;
+            //     else if (value.length >15){
+            //         return `Title must be max 40, got ${value.length} char`;
+            //     }
+            // },
         },
     },
     description:
@@ -32,7 +32,7 @@ const taskSchema = mongoose.Schema({
         type:String,
         validate:{
             validator: value=> value == "dd-mm-yyyy"?false:true,
-            message: () => "Date is required",
+            // message: () => "Date is required",
         },
         required: true,
     },
@@ -40,7 +40,7 @@ const taskSchema = mongoose.Schema({
         type:String,
         validate:{
             validator: value=> value == ":"?false:true,
-            message: () => "Time is required",
+            // message: () => "Time is required",
         },
         required:true,
     },
